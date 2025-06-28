@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naenia/assets/const.dart';
 import 'package:naenia/views/home.dart';
 import 'package:naenia/views/search.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,10 +59,10 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
         ],
-        unselectedLabelStyle: TextStyle(color: Color(0xffAAAAAA)),
-        unselectedIconTheme: IconThemeData(color: Color(0xffAAAAAA)),
-        selectedIconTheme: IconThemeData(color: Color(0xff323283)),
-        selectedLabelStyle: TextStyle(color: Color(0xff323283)),
+        unselectedLabelStyle: TextStyle(color: COLOR_GREY),
+        unselectedIconTheme: IconThemeData(color: COLOR_GREY),
+        selectedIconTheme: IconThemeData(color: COLOR_PRIMARY),
+        selectedLabelStyle: TextStyle(color: COLOR_PRIMARY),
       ),
     );
   }
