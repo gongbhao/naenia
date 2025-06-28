@@ -2,6 +2,10 @@
 
 NAENIA is a modern anime watching app designed to help you discover, track, and enjoy your favorite anime series. With an intuitive interface, personalized recommendations, and seamless streaming, NAENIA makes it easy to stay up-to-date with the latest episodes and explore new shows.
 
+## SCREENSHOTS
+
+To view updated screenshots of the app please navigate to `/screenshots`
+
 ## TO-DO
 
 - [x] Add splash screen
@@ -12,3 +16,5 @@ NAENIA is a modern anime watching app designed to help you discover, track, and 
 - [ ] Create modal for viewing episodes
 - [ ] Make searchbar work
 - [ ] Create personal page for stored (locally) animes
+
+With <3 gongbhao & [giravolte](https://github.com/giravolte)
