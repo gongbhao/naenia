@@ -67,3 +67,7 @@ const TextStyle TEXT_BODY_BOLD_DARK = TextStyle(
   fontWeight: FontWeight.w700,
   color: COLOR_TEXT,
 );
+const TextStyle TEXT_PLACEHOLDER = TextStyle(
+  fontSize: 14,
+  color: Color.fromRGBO(18, 18, 18, 0.5),
+);
