@@ -13,6 +13,8 @@ class _SearchFieldState extends State<SearchField> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Material(
+        elevation: 10,
+        shadowColor: Colors.black.withValues(alpha: .30),
         borderRadius: BorderRadius.circular(12),
         child: TextField(
           cursorColor: Color.fromRGBO(18, 18, 18, 0.1),
@@ -20,21 +22,9 @@ class _SearchFieldState extends State<SearchField> {
             hintText: 'Search...',
             hintStyle: TEXT_PLACEHOLDER,
             prefixIcon: const Icon(Icons.search),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              borderSide: BorderSide(color: COLOR_GREY),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              borderSide: BorderSide(color: COLOR_GREY),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              borderSide: BorderSide(
-                color: Color.fromRGBO(18, 18, 18, 0.1),
-                width: 1.5,
-              ),
-            ),
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
               vertical: 14,
