@@ -1,18 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:naenia/assets/const.dart';
+import 'package:naenia/utilities/classes.dart';
 
 class AnimeCover extends StatelessWidget {
-  const AnimeCover({super.key});
+  final Anime anime;
+
+  const AnimeCover({super.key, required this.anime});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 140,
       decoration: BoxDecoration(
-        color: COLOR_PRIMARY,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(
+          image: NetworkImage(anime.coverUrl),
+          fit: BoxFit.cover,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            spreadRadius: 1,
+            blurRadius: 5,
+          ),
+        ],
       ),
-      child: const Center(child: Text('Anime', style: TEXT_BODY_DARK)),
+      // Optionally, overlay title or other info here
     );
   }
 }

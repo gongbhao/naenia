@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naenia/utilities/test_list.dart';
 import 'package:naenia/widgets/AnimeCover.dart';
 
 class Home extends StatefulWidget {
@@ -19,22 +20,25 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                 child: Text(
                   'Categoria',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
               SizedBox(
-                height: 220,
+                height: 236,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  itemCount: 5, // Number of manga placeholders
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 8,
+                  ),
+                  itemCount: test_list.length,
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                   itemBuilder: (context, index) {
-                    return AnimeCover();
+                    return AnimeCover(anime: test_list[index]);
                   },
                 ),
               ),
@@ -44,22 +48,25 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                 child: Text(
                   'Categoria',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
               SizedBox(
-                height: 220,
+                height: 236,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  itemCount: 5, // Number of manga placeholders
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 8,
+                  ),
+                  itemCount: test_list.length,
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                   itemBuilder: (context, index) {
-                    return AnimeCover();
+                    return AnimeCover(anime: test_list[index]);
                   },
                 ),
               ),
@@ -69,22 +76,25 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                 child: Text(
                   'Categoria',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
               ),
               SizedBox(
-                height: 220,
+                height: 236,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  itemCount: 5, // Number of manga placeholders
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 8,
+                  ),
+                  itemCount: test_list.length,
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                   itemBuilder: (context, index) {
-                    return AnimeCover();
+                    return AnimeCover(anime: test_list[index]);
                   },
                 ),
               ),
