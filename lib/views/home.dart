@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naenia/widgets/AnimeCover.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -33,23 +34,7 @@ class _HomeState extends State<Home> {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 140,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Manga',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    );
+                    return AnimeCover();
                   },
                 ),
               ),
@@ -74,23 +59,7 @@ class _HomeState extends State<Home> {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 140,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Manga',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    );
+                    return AnimeCover();
                   },
                 ),
               ),
@@ -115,23 +84,7 @@ class _HomeState extends State<Home> {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 140,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Manga',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    );
+                    return AnimeCover();
                   },
                 ),
               ),

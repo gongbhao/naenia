@@ -44,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Naenia", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text("Naenia", style: TEXT_APPBAR),
         centerTitle: false,
         leading: Padding(
           padding: const EdgeInsets.only(left: 16.0),
