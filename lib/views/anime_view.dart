@@ -147,7 +147,15 @@ class _AnimeViewState extends State<AnimeView> {
                 right: 0,
                 child: Expanded(
                   flex: 5,
-                  child: Material(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: COLOR_BACKGROUND.withAlpha(20),
+                          blurRadius: 5,
+                        ),
+                      ],
+                    ),
                     child: TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
