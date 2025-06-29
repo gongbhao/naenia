@@ -14,6 +14,10 @@ To view updated screenshots of the app please navigate to `/screenshots`
 - [x] Add basic searchbar
 - [x] Make anime detail page
 - [ ] Create modal for viewing episodes
+- - [x] Add basic modal view
+- - [ ] Create a property to hold episodes in Anime class
+- - [ ] Create a 'AnimeEpisode' widget representing each episode in the modal list
+- - [ ] Implement a builder to build from the episode list property the visual list of the episodes
 - [ ] Make searchbar work
 - [ ] Create personal page for stored (locally) animes
 - [ ] Make the scraping
