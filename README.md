@@ -16,5 +16,6 @@ To view updated screenshots of the app please navigate to `/screenshots`
 - [ ] Create modal for viewing episodes
 - [ ] Make searchbar work
 - [ ] Create personal page for stored (locally) animes
+- [ ] Make the scraping
 
 With <3 gongbhao & [giravolte](https://github.com/giravolte)
