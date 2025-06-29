@@ -45,16 +45,39 @@ class _AnimeViewState extends State<AnimeView> {
                           flex: 1,
                           child: AspectRatio(
                             aspectRatio: 0.65,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(widget.anime.coverUrl),
-                                  fit: BoxFit.cover,
+                            child: Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        widget.anime.coverUrl,
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      color: COLOR_BACKGROUND,
+                                      padding: EdgeInsets.all(4),
+                                      child: Icon(
+                                        Icons.star_border,
+                                        color: Colors.white,
+                                        size: 28,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
+
                         Expanded(
                           flex: 2,
                           child: Padding(
@@ -115,37 +138,24 @@ class _AnimeViewState extends State<AnimeView> {
                     trimExpandedText: ' Show less',
                     style: TEXT_BODY,
                   ),
-                  SizedBox(height: 70), // Add some space to prevent overlap
+                  SizedBox(height: 70),
                 ],
               ),
               Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0,
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: Material(
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            backgroundColor: COLOR_PRIMARY,
-                          ),
-                          child: Text("GUARDA", style: TEXT_BODY_BOLD_DARK),
-                        ),
+                child: Expanded(
+                  flex: 5,
+                  child: Material(
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: COLOR_PRIMARY,
                       ),
+                      child: Text("GUARDA", style: TEXT_BODY_BOLD_DARK),
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: Material(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star_border_outlined),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ],
