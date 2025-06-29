@@ -12,10 +12,11 @@ To view updated screenshots of the app please navigate to `/screenshots`
 - [x] Add homepage with categories
 - [x] Make tests with temporary list
 - [x] Add basic searchbar
-- [ ] Make anime detail page
+- [x] Make anime detail page
 - [ ] Create modal for viewing episodes
 - [ ] Make searchbar work
 - [ ] Create personal page for stored (locally) animes
 - [ ] Make the scraping
+- [ ] Make "favourite" star icon button in anime detail view work and sync to the personal library
 
 With <3 gongbhao & [giravolte](https://github.com/giravolte)
