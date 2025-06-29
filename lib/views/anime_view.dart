@@ -153,7 +153,7 @@ class _AnimeViewState extends State<AnimeView> {
                       style: TextButton.styleFrom(
                         backgroundColor: COLOR_PRIMARY,
                       ),
-                      child: Text("GUARDA", style: TEXT_BODY_BOLD_DARK),
+                      child: Text("WATCH", style: TEXT_BODY_BOLD_DARK),
                     ),
                   ),
                 ),
