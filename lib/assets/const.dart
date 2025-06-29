@@ -7,6 +7,7 @@ const Color COLOR_TEXT = Color(0xffFFFFFF);
 const Color COLOR_TEXT_LIGHT = Color(0xff181818);
 const Color COLOR_BACKGROUND = Color(0xff181818);
 const Color COLOR_GREY = Color(0xffAAAAAA);
+const Color COLORS_WHISPER = Color(0xffF8F8FF);
 
 /* TEXT STYLE LIGHT */
 const TextStyle TEXT_APPBAR = TextStyle(

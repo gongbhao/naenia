@@ -157,7 +157,9 @@ class _AnimeViewState extends State<AnimeView> {
                       ],
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        buildEpisodesModal(context);
+                      },
                       style: TextButton.styleFrom(
                         backgroundColor: COLOR_PRIMARY,
                       ),
@@ -170,6 +172,29 @@ class _AnimeViewState extends State<AnimeView> {
           ),
         ),
       ),
+    );
+  }
+
+  Future<void> buildEpisodesModal(BuildContext context) {
+    return showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 700,
+          width: double.infinity,
+          color: COLORS_WHISPER,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Episodes', style: TEXT_SECTION),
+                Text("placeholder: list of episodes"),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
