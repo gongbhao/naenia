@@ -86,14 +86,7 @@ class _AnimeViewState extends State<AnimeView> {
 
         SizedBox(height: 20),
 
-        Text(
-          widget.anime.name,
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: COLOR_TEXT_LIGHT,
-          ),
-        ),
+        Text(widget.anime.name, style: TEXT_DETAIL_NAME),
 
         SizedBox(height: 8),
 
@@ -143,7 +136,7 @@ class _AnimeViewState extends State<AnimeView> {
         colorClickableText: COLOR_PRIMARY,
         trimCollapsedText: ' Show more',
         trimExpandedText: ' Show less',
-        style: TextStyle(fontSize: 14, color: Colors.grey[700], height: 1.5),
+        style: TEXT_DETAIL_DESC,
       ),
     );
   }

@@ -35,6 +35,16 @@ const TextStyle TEXT_BODY_BOLD = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w700,
 );
+const TextStyle TEXT_DETAIL_NAME = TextStyle(
+  fontSize: 24,
+  fontWeight: FontWeight.bold,
+  color: COLOR_TEXT_LIGHT,
+);
+TextStyle TEXT_DETAIL_DESC = TextStyle(
+  fontSize: 14,
+  color: Colors.grey[700],
+  height: 1.5,
+);
 
 /* TEXT STYLE DARK */
 const TextStyle TEXT_APPBAR_DARK = TextStyle(
