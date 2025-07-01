@@ -40,7 +40,7 @@ class _AnimeViewState extends State<AnimeView> {
 
   Widget _buildTopActions() {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -70,8 +70,8 @@ class _AnimeViewState extends State<AnimeView> {
     return Column(
       children: [
         Container(
-          width: 180,
-          height: 270,
+          width: 200,
+          height: 300,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             image: DecorationImage(
