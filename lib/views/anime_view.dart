@@ -13,159 +13,22 @@ class AnimeView extends StatefulWidget {
 }
 
 class _AnimeViewState extends State<AnimeView> {
+  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Naenia", style: TEXT_APPBAR),
-        centerTitle: false,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Image.asset('lib/assets/logo.jpg', height: 20, width: 20),
-          ),
-        ),
-      ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Stack(
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(bottom: 16),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: AspectRatio(
-                            aspectRatio: 0.65,
-                            child: Stack(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                        widget.anime.coverUrl,
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  bottom: 0,
-                                  right: 0,
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: Container(
-                                      color: COLOR_BACKGROUND,
-                                      padding: EdgeInsets.all(4),
-                                      child: Icon(
-                                        Icons.star_border,
-                                        color: Colors.white,
-                                        size: 28,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+              _buildTopActions(),
 
-                        Expanded(
-                          flex: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 8.0,
-                              horizontal: 16,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Center(
-                                  child: Text(
-                                    widget.anime.name,
-                                    style: TEXT_BODY_BOLD,
-                                  ),
-                                ),
-                                Text(
-                                  "Date aired: ${DateFormat.yMMMd().format(widget.anime.dateAired!)}",
-                                  style: TEXT_BODY,
-                                ),
-                                Text(
-                                  "Type: ${widget.anime.type}",
-                                  style: TEXT_BODY,
-                                ),
-                                Text(
-                                  "Studios: ${widget.anime.studios}",
-                                  style: TEXT_BODY,
-                                ),
-                                Text(
-                                  "Status: ${widget.anime.status}",
-                                  style: TEXT_BODY,
-                                ),
-                                Text(
-                                  "Type: ${widget.anime.genres!.join(", ")}",
-                                  style: TEXT_BODY,
-                                ),
-                                Text(
-                                  "Score: ${widget.anime.score}",
-                                  style: TEXT_BODY,
-                                ),
-                                Text(
-                                  "Episodes: ${widget.anime.episodes}",
-                                  style: TEXT_BODY,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  ReadMoreText(
-                    widget.anime.description!,
-                    trimMode: TrimMode.Line,
-                    trimLines: 5,
-                    colorClickableText: COLOR_PRIMARY,
-                    trimCollapsedText: ' Show more',
-                    trimExpandedText: ' Show less',
-                    style: TEXT_BODY,
-                  ),
-                  SizedBox(height: 70),
-                ],
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Expanded(
-                  flex: 5,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: COLOR_BACKGROUND.withAlpha(20),
-                          blurRadius: 5,
-                        ),
-                      ],
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        buildEpisodesModal(context);
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: COLOR_PRIMARY,
-                      ),
-                      child: Text("WATCH", style: TEXT_BODY_BOLD_DARK),
-                    ),
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  spacing: 20,
+                  children: [_buildPosterInfo(), _buildDescription()],
                 ),
               ),
             ],
@@ -175,26 +38,113 @@ class _AnimeViewState extends State<AnimeView> {
     );
   }
 
-  Future<void> buildEpisodesModal(BuildContext context) {
-    return showModalBottomSheet<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          height: 700,
-          width: double.infinity,
-          color: COLORS_WHISPER,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text('Episodes', style: TEXT_SECTION),
-                Text("placeholder: list of episodes"),
-              ],
+  Widget _buildTopActions() {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios, size: 20),
+            color: COLOR_TEXT_LIGHT,
+          ),
+          IconButton(
+            onPressed: () {
+              setState(() {
+                isFavorite = !isFavorite;
+              });
+            },
+            icon: Icon(
+              isFavorite ? Icons.star : Icons.star_border,
+              size: 24,
+              color: isFavorite ? COLOR_PRIMARY : COLOR_TEXT_LIGHT,
             ),
           ),
-        );
-      },
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPosterInfo() {
+    return Column(
+      children: [
+        Container(
+          width: 180,
+          height: 270,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            image: DecorationImage(
+              image: NetworkImage(widget.anime.coverUrl),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: [
+              BoxShadow(color: Colors.black.withAlpha(51), blurRadius: 20),
+            ],
+          ),
+        ),
+
+        SizedBox(height: 20),
+
+        Text(
+          widget.anime.name,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: COLOR_TEXT_LIGHT,
+          ),
+        ),
+
+        SizedBox(height: 8),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              DateFormat.y().format(widget.anime.dateAired!),
+              style: TextStyle(fontSize: 16, color: COLOR_GREY),
+            ),
+            Text(" • ", style: TextStyle(color: COLOR_GREY)),
+            Text(
+              widget.anime.type ?? "TV",
+              style: TextStyle(fontSize: 16, color: COLOR_GREY),
+            ),
+          ],
+        ),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.star, color: COLOR_PRIMARY, size: 20),
+            SizedBox(width: 4),
+            Text(
+              widget.anime.score.toString(),
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: COLOR_PRIMARY,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDescription() {
+    if (widget.anime.description == null) return SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: ReadMoreText(
+        widget.anime.description!,
+        trimMode: TrimMode.Line,
+        trimLines: 5,
+        colorClickableText: COLOR_PRIMARY,
+        trimCollapsedText: ' Show more',
+        trimExpandedText: ' Show less',
+        style: TextStyle(fontSize: 14, color: Colors.grey[700], height: 1.5),
+      ),
     );
   }
 }
