@@ -25,3 +25,5 @@ To view updated screenshots of the app please navigate to `/screenshots`
 - [ ] Fix: fix covers in the home using same method as cover in the detail page
 
 With <3 gongbhao & [giravolte](https://github.com/giravolte)
+
+⚠️ WORK IN PROGRESS
