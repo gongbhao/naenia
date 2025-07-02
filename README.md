@@ -13,7 +13,10 @@ To view updated screenshots of the app please navigate to `/screenshots`
 - [x] Make tests with temporary list
 - [x] Add basic searchbar
 - [x] Make anime detail page
+- [x] Restyle anime detail page
+- [ ] Restyle home page
 - [ ] Create modal for viewing episodes
+- [ ] Make everything dynamic to the infos actually available
 - - [x] Add basic modal view
 - - [ ] Create a property to hold episodes in Anime class
 - - [ ] Create a 'AnimeEpisode' widget representing each episode in the modal list
