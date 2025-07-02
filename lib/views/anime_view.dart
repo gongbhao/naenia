@@ -19,20 +19,30 @@ class _AnimeViewState extends State<AnimeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              _buildTopActions(),
+        child: Column(
+          children: [
+            _buildTopActions(),
 
-              Padding(
-                padding: const EdgeInsets.all(20),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
-                  spacing: 20,
-                  children: [_buildPosterInfo(), _buildDescription()],
+                  children: [
+                    SizedBox(height: 20),
+                    _buildPosterInfo(),
+                    SizedBox(height: 20),
+                    _buildDescription(),
+                    SizedBox(height: 20),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: _buildModalButton(),
+            ),
+          ],
         ),
       ),
     );
@@ -138,6 +148,47 @@ class _AnimeViewState extends State<AnimeView> {
         trimExpandedText: ' Show less',
         style: TEXT_DETAIL_DESC,
       ),
+    );
+  }
+
+  Widget _buildModalButton() {
+    return Container(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {
+          buildEpisodesModal(context);
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: COLOR_BACKGROUND, // Dark background
+          elevation: 5,
+          shadowColor: Colors.black.withAlpha((0.3 * 255).toInt()),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        child: Text("WATCH", style: TEXT_BODY_BOLD_DARK),
+      ),
+    );
+  }
+
+  Future<void> buildEpisodesModal(BuildContext context) {
+    return showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 700,
+          width: double.infinity,
+          color: COLORS_WHISPER,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Episodes', style: TEXT_SECTION),
+                Text("placeholder: list of episodes"),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
