@@ -152,7 +152,7 @@ class _AnimeViewState extends State<AnimeView> {
   }
 
   Widget _buildModalButton() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
