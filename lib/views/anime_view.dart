@@ -164,7 +164,7 @@ class _AnimeViewState extends State<AnimeView> {
           shadowColor: Colors.black.withAlpha((0.3 * 255).toInt()),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
-        child: Text("WATCH", style: TEXT_BODY_BOLD_DARK),
+        child: Text("Watch", style: TEXT_BODY_BOLD_DARK),
       ),
     );
   }
